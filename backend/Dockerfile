@@ -1,0 +1,24 @@
+FROM node:18
+
+ARG FRONTEND_URL
+ARG FRONTEND_PORT
+ARG BACKEND_PORT
+
+WORKDIR /home
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+RUN npm install
+
+COPY . .
+
+ENV FRONTEND_URL=${FRONTEND_URL}
+ENV FRONTEND_PORT=${FRONTEND_PORT}
+ENV BACKEND_PORT=${BACKEND_PORT}
+
+RUN echo "FRONTEND_URL=${FRONTEND_URL}" >> .env
+RUN echo "FRONTEND_PORT=${FRONTEND_PORT}" >> .env
+RUN echo "BACKEND_PORT=${BACKEND_PORT}" >> .env
+
+CMD node app.js

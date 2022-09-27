@@ -1,0 +1,15 @@
+{
+  "name": "angellistapp",
+  "version": "1.0.0",
+  "description": "takehome project for angellist interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Alex Cameron",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1"
+  }
+}
